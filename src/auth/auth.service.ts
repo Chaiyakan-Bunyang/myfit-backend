@@ -53,10 +53,10 @@ export class AuthService {
           HttpStatus.BAD_REQUEST,
         );
       }
+      console.log(`User ${user.username} Login Successful`);
       const payload = { user };
-      const token = await this.jwtService.sign(payload);
-      return { token };
-      // return user;
+      // const token = await this.jwtService.sign(payload);
+      return { access_token: this.jwtService.sign(payload) };
     } else {
       throw new HttpException(
         'The Email is incorrect!',

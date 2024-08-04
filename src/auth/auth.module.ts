@@ -15,7 +15,7 @@ import { JwtStrategy } from './jwt.strategy';
       secret: process.env.SECRET_KEY,
       // secret: 'MyFit?G!8hZ0m*n3rQ7$Vx@5pW^Lk2#RsDt6+UbYz',
       signOptions: {
-        expiresIn: 5000,
+        expiresIn: 3600,
       },
     }),
     TypeOrmModule.forFeature([User]),
